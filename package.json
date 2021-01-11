@@ -1,0 +1,43 @@
+{
+  "name": "git-report",
+  "version": "1.0.0",
+  "author": "Trey Foster",
+  "bin": {
+    "git-report": "./bin/run"
+  },
+  "bugs": "https://github.com/Infamoustrey/git-report/issues",
+  "dependencies": {
+    "@oclif/command": "^1.8.0",
+    "@oclif/config": "^1.17.0",
+    "@oclif/plugin-help": "^3.2.1",
+    "ejs": "^3.1.5",
+    "puppeteer": "^5.5.0",
+    "simple-git": "^2.31.0"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.26.0",
+    "eslint": "^5.16.0",
+    "eslint-config-oclif": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/src"
+  ],
+  "homepage": "https://github.com/Infamoustrey/git-report",
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "oclif": {
+    "bin": "git-report"
+  },
+  "repository": "Infamoustrey/git-report",
+  "scripts": {
+    "posttest": "eslint .",
+    "prepack": "oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}
