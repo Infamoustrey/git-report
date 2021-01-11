@@ -10,7 +10,9 @@
     "@oclif/command": "^1.8.0",
     "@oclif/config": "^1.17.0",
     "@oclif/plugin-help": "^3.2.1",
+    "dayjs": "^1.10.3",
     "handlebars": "^4.7.6",
+    "lodash": "^4.17.20",
     "puppeteer": "^5.5.0",
     "simple-git": "^2.31.0"
   },
