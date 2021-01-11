@@ -1,4 +1,10 @@
-const {Command, flags} = require('@oclif/command')
+const fs = require('fs');
+const { join } = require('path')
+const {Command, flags} = require('@oclif/command');
+
+const Handlebars = require("handlebars");
+
+const {htmlToPdf} = require('./htmlToPdf')
 
 class GitReportCommand extends Command {
 
@@ -20,7 +26,17 @@ class GitReportCommand extends Command {
   async run() {
     const {args} = this.parse(GitReportCommand)
 
+    const template = Handlebars.compile(
+      fs.readFileSync(
+        join(__dirname, 'templates/report.handlebars')
+      ).toString()
+    );
 
+    const html = template({});
+
+    const pdfBuffer = await htmlToPdf(html);
+
+    fs.writeFileSync('out.pdf', pdfBuffer);
 
   }
 }
